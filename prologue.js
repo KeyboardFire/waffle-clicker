@@ -15,15 +15,18 @@ function prologue_read(onFinish) {
 	$('#discover').remove();
 	$(document.body).append($('<div>').attr('id', 'scroll').css('position', 'relative')
 		.append($('<p>').text('You read the scroll. It looks much longer than it really needs to be.'))
+		.append($('<button>')
+			.text('Go on a majestic journey to find the glorious waffle of the ancient times')
+			.css({display: 'block', marginBottom: '1em'}).click(function(){ prologue_journey(onFinish); }))
 		.append($('<img>').attr('src', 'scroll.png').css('position', 'absolute'))
-		.append($('<div>').html('<p style="margin:0">How to make waffles</p><p><ol style="margin-left:30px"><li>Find waffle</li><li>Click it</li><li>Go to step 2</li></ol></p>').css({
-			position: 'absolute',
-			margin: '55px',
-			width: '490px',
-			color: 'white',
-			font: 'bold 20px sans-serif'
-		}))
-		.append($('<button>').text('Go on a majestic journey to find the glorious waffle of the ancient times')).click(function(){ prologue_journey(onFinish); }));
+		.append($('<div>').html('<p style="margin:0">How to make waffles</p><p><ol style="margin-left:30px">' +
+			'<li>Find waffle</li><li>Click it</li><li>Go to step 2</li></ol></p>').css({
+				position: 'absolute',
+				margin: '55px',
+				width: '490px',
+				color: 'white',
+				font: 'bold 20px sans-serif'
+			})));
 }
 
 function prologue_journey(onFinish) {
